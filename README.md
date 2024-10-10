@@ -178,9 +178,9 @@ x = s.indexof("H"); // 0
 x = s.substring(0, 4); // Hell
 x = s.substring(2, 5); // llo
 
-x = slice(0, 5); // Hello
-x = slice(-11); // Hello World
-x = slice(-11, -6); // Hello
+x = s.slice(0, 5); // Hello
+x = s.slice(-11); // Hello World
+x = s.slice(-11, -6); // Hello
 
 x = "            Hello World";
 x = x.trim(); // Hello World
@@ -225,4 +225,35 @@ x = num.toLocaleString("ar-EG"); // '٥'   - египет
 
 x = Number.MAX_VALUE; // 1.7976931348623157e+308
 x = Number.MIN_VALUE; // 5e-324
+```
+
+## Math object
+
+```javascript
+let x;
+
+x = Math.sqrt(9); // 3
+
+x = Math.abs(-5); // 5
+
+x = Math.round(4.2); // 4
+
+x = Math.ceil(4.2); // 5 округляем в большую
+
+x = Math.floor(4.9); // 4 округляем в меньшую
+
+x = Math.pow(2, 3); // 8  возведение в степень
+
+x = Math.min(4, 5, 3); // 3
+
+x = Math.max(4, 5, 3); // 5
+
+x = Math.random(); // от 0 до 1
+
+x = Math.random() * 10; // от 0 до 9  например 1,669687238705285
+
+x = Math.random() * 10 + 1; // от 1 до 10 например 1,669687238705285
+
+x = Math.floor(Math.random() * 10 + 1); // от 1 до 10
+x = Math.floor(Math.random() * 100 + 1); // от 1 до 100
 ```

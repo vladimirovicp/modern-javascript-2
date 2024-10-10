@@ -1,5 +1,7 @@
 # modern-javascript-2
 
+https://github.com/bradtraversy/javascript-sandbox
+
 ## Преобразование типов
 
 ### Преобразовать строку в число
@@ -138,4 +140,59 @@ x = Number(false); // 0 number
 x = 5 + true; // 6 nember
 
 x = 5 + undefined; // NaN number
+```
+
+# String
+
+## Шаблонные литералы (строковые шаблоны)
+
+```javascript
+let x;
+const name = "John";
+const age = 30;
+
+x = `Hello, my name is ${name} and I am ${age} years old`;
+```
+
+## Свойства и методы
+
+```javascript
+let x;
+const s = "Hello World";
+
+x = s.length; // 11
+
+x = s[0]; // H
+
+x = s.__proto__; // увидим свойство и методы
+```
+
+```javascript
+let x;
+const s = new String("Hello World");
+
+x = s.charAt(0); // H
+
+x = s.indexof("H"); // 0
+
+x = s.substring(0, 4); // Hell
+x = s.substring(2, 5); // llo
+
+x = slice(0, 5); // Hello
+x = slice(-11); // Hello World
+x = slice(-11, -6); // Hello
+
+x = "            Hello World";
+x = x.trim(); // Hello World
+
+x = s.replace("World", "John"); // Hello John
+
+x = s.includes("Hello"); // true
+x = s.includes("Helli"); // false
+
+x = s.valueOf(); // Hello John
+
+x = s.split(); // ['Hello World']
+x = s.split(" "); // ['Hello', 'World']
+x = s.split(""); // ['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd']
 ```

@@ -196,3 +196,33 @@ x = s.split(); // ['Hello World']
 x = s.split(" "); // ['Hello', 'World']
 x = s.split(""); // ['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd']
 ```
+
+## number
+
+```javascript
+let x;
+const num = new Number(5);
+
+x = num.toString(); // '5'
+x = num.toString().lenght; // 1
+x = num.toFixed(2); // 5.00 string
+```
+
+```javascript
+let x;
+const num = new Number(5.4527);
+
+x = num.toPrecision(2); // '5.5'
+x = num.toExponential(2); // '5.45e+0'
+```
+
+```javascript
+let x;
+const num = new Number(5);
+
+x = num.toLocaleString("en-US"); // 5
+x = num.toLocaleString("ar-EG"); // '٥'   - египет
+
+x = Number.MAX_VALUE; // 1.7976931348623157e+308
+x = Number.MIN_VALUE; // 5e-324
+```

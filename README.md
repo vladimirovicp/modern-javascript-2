@@ -257,3 +257,91 @@ x = Math.random() * 10 + 1; // от 1 до 10 например 1,669687238705285
 x = Math.floor(Math.random() * 10 + 1); // от 1 до 10
 x = Math.floor(Math.random() * 100 + 1); // от 1 до 100
 ```
+
+## dates and time
+
+```javascript
+let d;
+
+d = new Date();
+
+d = new Date(2021, 6, 10); // месяц начинается с нуля  | Sat Jul 10 2021 00:00:00 GMT+0400 (GMT+04:00)
+
+d = new Date(2021, 0, 10); // январь | Sun Jan 10 2021 00:00:00 GMT+0400 (GMT+04:00)
+
+d = new Date(2021, 0, 10, 12, 30, 0); // добавил время | Sun Jan 10 2021 12:30:00 GMT+0400 (GMT+04:00)
+
+d = new Date("2021-07-10"); // Sat Jul 10 2021 04:00:00 GMT+0400 (GMT+04:00)
+
+d = new Date("2021-07-10T12:30:00"); // Sat Jul 10 2021 12:30:00 GMT+0400 (GMT+04:00)
+
+d = new Date("07/10/2021"); // Sat Jul 10 2021 00:00:00 GMT+0400 (GMT+04:00)
+
+d = new Date("07/10/2021 12:30:00"); // Sat Jul 10 2021 12:30:00 GMT+0400 (GMT+04:00)
+
+d = new Date("2022-07-10"); // Sun Jul 10 2022 04:00:00 GMT+0400 (GMT+04:00)
+
+d = Date.now(); // прошедшие милисекунды
+
+d = new Date("07/10/2021");
+d = d.getTime(); // 1625860800000
+
+d = new Date("07/10/2021 12:30:00");
+d = d.getTime(); // 1625905800000
+d = d.valueOf(); // 1625905800000
+
+d = new Date(1625905800000); // Sat Jul 10 2021 12:30:00 GMT+0400 (GMT+04:00)
+
+d = Math.floor(Date.now() / 1000); // временая ветка в секундах
+```
+
+## Методы Date
+
+```javascript
+let x;
+let d = new Date("10/11/2024 11:30:00");
+
+x = d.toString(); // 'Fri Oct 11 2024 11:30:00 GMT+0400 (GMT+04:00)'
+
+x = d.getTime(); // 1728631800000
+x = d.valueOf(); // 1728631800000  в милисекундах
+
+x = d.getFullYear(); // 2024 | год
+
+x = d.getMonth(); // 9  не забывай, что месяц с нуля
+
+x = d.getMonth() + 1; // 10 что бы получать правильный месяц
+
+x = d.getDate(); // 11 | день
+
+x = d.getHours(); // 11 | часов
+
+x = d.getMinutes(); // 30 | минут
+
+x = d.getSeconds(); //  0 | секунды
+
+x = d.getMilliseconds(); // 0 | милисекунды
+
+x = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; // '2024-10-11'
+
+x = Intl.DateTimeFormat("en-US").format(d); // '10/11/2024'
+x = Intl.DateTimeFormat("en-GB").format(d); // '11/10/2024'
+x = Intl.DateTimeFormat("ru-RU").format(d); // '11.10.2024'
+
+x = Intl.DateTimeFormat("default").format(d); // формат моей страны '11.10.2024'
+
+x = Intl.DateTimeFormat("default", { month: "long" }).format(d); // 'октябрь'
+
+x = d.toLocaleString("default", { month: "short" }); // 'окт.'
+
+x = d.toLocaleString("default", {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+  seconds: "numeric",
+  timeZone: "America/New_York",
+}); // 'пятница, 11 октября 2024 г. в 03:30'
+```

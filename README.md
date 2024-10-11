@@ -345,3 +345,9 @@ x = d.toLocaleString("default", {
   timeZone: "America/New_York",
 }); // 'пятница, 11 октября 2024 г. в 03:30'
 ```
+
+# Массивы
+
+```javascript
+const number = [12, 45, 33, 29, 39];
+```

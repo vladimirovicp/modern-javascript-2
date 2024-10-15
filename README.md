@@ -403,3 +403,56 @@ const arr = [34, 55, 95, 20, 15];
 //удалить только один элемент
 x = arr.splice(3, 1); // [20]  arr = [34, 55, 95, 15]
 ```
+
+## Вложенный массив
+
+```javascript
+let x;
+
+const fruits = ["apple", "pear", "orange"];
+
+const berries = ["strawberry", "blueberry", "rasberry"];
+
+fruits.push(berries);
+
+console.log(fruits); // ['apple', 'pear', 'orange', ["strawberry", "blueberry", "rasberry"]]
+
+x = fruits[3][1]; // 'blueberry'
+
+const allFruint = [fruits, berries]; // [['apple', 'pear', 'orange'],["strawberry", "blueberry", "rasberry"]]
+
+x = allFruint[1][0]; //strawberry
+```
+
+```javascript
+let x;
+
+const fruits = ["apple", "pear", "orange"];
+
+const berries = ["strawberry", "blueberry", "rasberry"];
+
+x = fruits.concat(berries); // ['apple', 'pear', 'orange', 'strawberry', 'blueberry', 'rasberry']
+
+// spread
+
+x = [...fruits, ...berries]; // ['apple', 'pear', 'orange', 'strawberry', 'blueberry', 'rasberry']
+
+// Flatten Arrays (сглаживание)
+
+const arr = [1, 2, [3, 4], 5, [6, 7], 8];
+
+x = arr.flat(); // [1, 2, 3, 4, 5, 6, 7, 8]
+
+// Это массив
+x = Array.isArray(fruits); // true
+
+// создание массива из массива значений
+
+x = Array.from("12345"); // ['1', '2', '3', '4', '5']
+
+const a = 1;
+const b = 2;
+const c = 3;
+
+x = Array.of(a, b, c); // [1, 2, 3]
+```

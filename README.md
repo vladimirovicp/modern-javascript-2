@@ -2,6 +2,8 @@
 
 https://github.com/bradtraversy/javascript-sandbox
 
+https://api.github.com/users
+
 ## Преобразование типов
 
 ### Преобразовать строку в число
@@ -455,4 +457,195 @@ const b = 2;
 const c = 3;
 
 x = Array.of(a, b, c); // [1, 2, 3]
+```
+
+## Создание объектов
+
+```javascript
+const person = {
+  name: "John",
+};
+```
+
+```javascript
+const todo = {};
+const todo = new object();
+
+todo.id = 1;
+```
+
+```javascript
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+
+const obj3 = { obj1, obj2 }; // {obj1: {…}, obj2: {…}}
+
+// объединить spread и assign делают одно и тоже
+const obj3 = { ...obj1, ...obj2 }; // {a: 1, b: 2, c: 3, d: 4}
+
+const obj4 = Object.assign({}, obj1, obj2); // {a: 1, b: 2, c: 3, d: 4}
+```
+
+```javascript
+const todos = [
+  { id: 1, name: "Buy Milk" },
+  { id: 2, name: "Pickup kids from school" },
+  { id: 3, name: "Take out trash" },
+];
+
+x = todos[0].name; // 'Buy Milk'
+
+// получить все ключи и поместить их в объект
+
+x = Object.keys(todos[0]); // ['id', 'name']
+
+x = Object.keys(todos[0]).length; // 2
+
+// получить массив значений
+x = Object.values(todos[0]); // [1, 'Buy Milk']
+
+// массив пар ключ значения
+x = Object.entries(todos); // [Array(2), Array(2), Array(2)]
+
+// есть ли у объекта определенное свойство
+
+x = todos[0].hasOwnProperty("name"); //true
+x = todos[0].hasOwnProperty("age"); //false
+```
+
+## Destructuring & Naming (Деструктуризация и наименование)
+
+```javascript
+const firstName = "John";
+const lastName = "Doe";
+const age = 30;
+
+const person = {
+  firstName: firstName,
+  lastName: lastName,
+  age: age,
+};
+
+console.log(person.age); // 30
+
+//Тожесамое будет если написать
+
+const person = {
+  firstName,
+  lastName,
+  age,
+};
+console.log(person.age); // 30
+```
+
+### Деструктуризация
+
+```javascript
+const todo = {
+  id: 1,
+  title: "Take out trash",
+};
+
+const { id, title } = todo;
+
+console.log(id, title); // 1 'Take out trash'
+```
+
+```javascript
+const todo = {
+  id: 1,
+  title: "Take out trash",
+  user: {
+    name: "John",
+  },
+};
+
+const {
+  user: { name },
+} = todo;
+
+console.log(name); // John
+```
+
+### Переименовать
+
+```javascript
+const todo = {
+  id: 1,
+  title: "Take out trash",
+  user: {
+    name: "John",
+  },
+};
+
+const { id: todoId } = todo;
+
+console.log(todoId); // 1
+```
+
+### Деструктуризация массивов
+
+```javascript
+const numbers = [23, 67, 33, 49];
+
+const [firsr, second] = numbers;
+
+console.log(firsr, second); //23 67
+```
+
+```javascript
+const numbers = [23, 67, 33, 49];
+// ...rest оператор остатка
+const [firsr, second, ...rest] = numbers;
+
+console.log(firsr, second, rest); //23 67 [33,49]
+```
+
+# Json
+
+## Преобразование в строку
+
+```javascript
+const post = {
+  id: 1,
+  title: "title",
+  body: "body",
+};
+
+// convert to JSON string
+
+const str = JSON.stringify(post); // {"id":1,"title":"title","body":"body"}
+
+console.log(typeof str); // string
+
+// Parse JSON
+
+const obj = JSON.parse(str); // {id: 1, title: 'title', body: 'body'}
+console.log(typeof obj); // object
+```
+
+```javascript
+const post = [
+  {
+    id: 1,
+    title: "title",
+    body: "body",
+  },
+  {
+    id: 2,
+    title: "title2",
+    body: "body2",
+  },
+];
+
+// convert to JSON string
+
+const str = JSON.stringify(post); // [{"id":1,"title":"title","body":"body"},{"id":2,"title":"title2","body":"body2"}]
+
+console.log(typeof str); // string
+
+// Parse JSON
+
+const obj = JSON.parse(str); // {id: 1, title: 'title', body: 'body'}
+console.log(typeof obj); // object
 ```
